@@ -21,7 +21,7 @@ Bu uygulamayı yerel bir ortamda çalıştırmak ve bağımlılıkları yönetme
 
 2. Proje dizinine gidin.
    ```markdown
-   cd url-ip-monitor
+   cd URL_IP_BlackList_Checker
 
 3. Poetry ile projeyi yükleyin ve bağımlılıkları kurun.
    ```markdown
