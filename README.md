@@ -1,43 +1,43 @@
-# URL ve IP Adresi İzleme Uygulaması
+# URL and IP Address Monitoring Application
 
-Bu Python tabanlı uygulama, verilen URL'leri ve IP adreslerini izlemek, güvenlik durumlarını kontrol etmek ve değişiklikleri izlemek için kullanılır. Ayrıca Google Safe Browsing API'yi kullanarak kötü niyetli URL'leri belirlemek için asenkron bir işlev içerir.
+This Python-based application is used to monitor and check the security status of provided URLs and IP addresses. It also includes an asynchronous function to identify malicious URLs using the Google Safe Browsing API.
 
-## Başlarken
+## Getting Started
 
-Bu uygulamayı yerel bir ortamda çalıştırmak ve bağımlılıkları yönetmek için Poetry kullanıyoruz.
+We use Poetry to run this application in a local environment and manage its dependencies.
 
-### Gereksinimler
+### Requirements
 
 - Python 3.x
-- Poetry (Proje bağımlılıklarını yönetmek için)
-- Google Safe Browsing API Anahtarı (Kötü niyetli URL taraması için gereklidir)
+- Poetry (for managing project dependencies)
+- Google Safe Browsing API Key (required for malicious URL scanning)
 
-### Kurulum
+### Installation
 
-1. Bu depoyu yerel bilgisayarınıza klonlayın.
+1. Clone this repository to your local machine.
 
    ```markdown
    git clone https://github.com/Parestezi/URL_IP_BlackList_Checker
 
-2. Proje dizinine gidin.
+2. Navigate to the project directory.
    ```markdown
    cd URL_IP_BlackList_Checker
 
-3. Poetry ile projeyi yükleyin ve bağımlılıkları kurun.
+3. Install and set up the project using Poetry.
    ```markdown
    poetry install
 
-4. .env dosyasını oluşturun ve Google Safe Browsing API Anahtarınızı ekleyin.
+4. Create a .env file and add your Google Safe Browsing API Key.
       ```markdown
       GOOGLE_SAFE_BROWSING_API_KEY=your_api_key_here
 
-### Kullanım
-Uygulamayı başlattıktan sonra, bir dosyanın adını gireceğiniz bir istem alırsınız. Bu dosya, izlemek istediğiniz URL'leri veya IP adreslerini içermelidir.
+### Usage
+After launching the application, you will be prompted to enter the name of a file. This file should contain the URLs or IP addresses you want to monitor.
 
-Dosya içeriğini okur ve veritabanına URL'leri veya IP adreslerini ekler.
+The application reads the file's content and adds the URLs or IP addresses to the database.
 
-Uygulama, belirli aralıklarla URL'leri veya IP adreslerini kontrol eder ve güvenlik durumunu kontrol eder.
+The application periodically checks the URLs or IP addresses and verifies their security status.
 
-Kötü niyetli bir URL tespit edildiğinde, ilgili giriş "Yes" olarak güncellenir.
+When a malicious URL is detected, the corresponding entry is updated as "Yes."
 
-Down veya Redirection durumları tespit edildiğinde, bu URL'ler "down_redirection_urls.txt" dosyasına kaydedilir.
+If URLs are found to be "Down" or have redirection issues, they are saved to the "down_redirection_urls.txt" file.
